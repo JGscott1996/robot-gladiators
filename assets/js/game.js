@@ -15,6 +15,7 @@ function fight() {
 }
 // Create function
 var fight = function(enemyName) {
+
     while (playerHealth > 0 && enemyHealth > 0) {
       // ask player if they'd like to fight or run
       var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
@@ -71,8 +72,16 @@ var fight = function(enemyName) {
 };
 // execute function
 for(var i = 0; i < enemyNames.length; i++) {
+    if (playerHealth > 0) {
+        window.alert("Welcome to Robot Gladiators! Round " + ( i + 1 ) );
+    }
     var pickedEnemyName = enemyNames[i];
+
     enemyHealth = 50;
+    
+     // use debugger to pause script from running and check what's going on at that moment in the code
+    // debugger;
+
     fight(pickedEnemyName)
   }
 
